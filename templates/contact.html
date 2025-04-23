@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corey's Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <title>Corey's Website</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div class="px-4 py-1 my-5 text-center">
+      {% if contact_message %}
+      <h1 class="display-5 fw-bold text-body-emphasis">
+        {{ contact_message }}
+      </h1>
+      {% else %}
+      <h1 class="display-5 fw-bold text-body-emphasis">Contact Me</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Please submit your message below if you have any questions or
+          comments. Also feel free to add any suggestions for the content or the
+          website itself.
+        </p>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="container px-4 py-2">
+      <form
+        id="contactForm"
+        name="sentMessage"
+        action="{{ url_for('contact') }}"
+        method="post"
+      >
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            Enter an email if you want me to reply back.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="5"
+            name="message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"
+  ></script>
+</html>

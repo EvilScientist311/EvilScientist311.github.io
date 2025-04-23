@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <title>Corey's Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <style>
+      .zoom-hover {
+        transition: transform 0.2s ease;
+      }
+      .zoom-hover:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'header.html' %}
+
+    <!-- Introduction -->
+    <div class="px-4 py-5 my-1 text-center">
+      <h1 class="display-5 fw-bold text-body-emphasis">Derivations</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Below are the various topics where I have derived and explored certain
+          concepts. This started as a way for me to learn the
+          <a href="https://en.wikipedia.org/wiki/LaTeX" target="_blank"
+            >LaTeX</a
+          >
+          language, but then it became a small hobby.
+        </p>
+      </div>
+    </div>
+
+    <!-- Papers -->
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-4 gy-4">
+        <!-- Quantum Mechanics -->
+        <div class="col">
+          <a
+            href="{{ url_for('sub_papers', sub_path='quantum_mechanics') }}"
+            class="text-decoration-none text-reset"
+          >
+            <div
+              class="card h-100 zoom-hover w-100 mx-auto"
+              style="max-width: 25rem; height: 500px"
+            >
+              <img
+                src="{{ url_for('static', filename='img/qm.jpg') }}"
+                class="card-img-top img"
+                alt="Quantum Mechanics"
+                height="300"
+                width="150"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Quantum Mechanics</h5>
+                <p class="card-text">
+                  The study of matter and energy at the atomic and subatomic
+                  scale. Covers wave-particle duality, uncertainty principle,
+                  quantum states, and fundamental particle interactions.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Optics -->
+        <div class="col">
+          <a
+            href="{{ url_for('sub_papers', sub_path='optics') }}"
+            class="text-decoration-none text-reset"
+          >
+            <div
+              class="card h-100 zoom-hover w-100 mx-auto"
+              style="max-width: 25rem; height: 500px"
+            >
+              <img
+                src="{{ url_for('static', filename='img/optics.jpg') }}"
+                class="card-img-top"
+                alt="optics"
+                style="height: 300px; width: 100%; object-fit: cover"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Optics</h5>
+                <p class="card-text">
+                  The branch of physics dealing with light behaviour and
+                  properties. Includes geometric optics, wave optics, and
+                  electromagnetic theory of light propagation.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Mechanics -->
+        <div class="col">
+          <a
+            href="{{ url_for('sub_papers', sub_path='mechanics') }}"
+            class="text-decoration-none text-reset"
+          >
+            <div
+              class="card h-100 zoom-hover w-100 mx-auto"
+              style="max-width: 25rem; height: 500px"
+            >
+              <img
+                src="{{ url_for('static', filename='img/mechanics.jpg') }}"
+                class="card-img-top"
+                alt="mechanics"
+                height="300"
+                width="150"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mechanics</h5>
+                <p class="card-text">
+                  The study of motion, forces, and energy in physical systems.
+                  Encompasses classical mechanics, fluid dynamics, and the
+                  principles of conservation.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Electromagnetism -->
+        <div class="col">
+          <a
+            href="{{ url_for('sub_papers', sub_path='electromagnetism') }}"
+            class="text-decoration-none text-reset"
+          >
+            <div
+              class="card h-100 zoom-hover w-100 mx-auto"
+              style="max-width: 25rem; height: 500px"
+            >
+              <img
+                src="{{ url_for('static', filename='img/em.jpg') }}"
+                class="card-img-top"
+                alt="Electromagnetism"
+                height="300"
+                width="150"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Electromagnetism</h5>
+                <p class="card-text">
+                  Study of electric and magnetic fields and their interactions.
+                  Covers Maxwell's equations, electromagnetic waves, and charged
+                  particle behavior.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Relativity -->
+        <div class="col">
+          <a
+            href="{{ url_for('sub_papers', sub_path='relativity') }}"
+            class="text-decoration-none text-reset"
+          >
+            <div
+              class="card h-100 zoom-hover w-100 mx-auto"
+              style="max-width: 25rem; height: 500px"
+            >
+              <img
+                src="{{ url_for('static', filename='img/relativity.jpg') }}"
+                class="card-img-top"
+                alt="spacetime"
+                height="300"
+                width="150"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Relativity</h5>
+                <p class="card-text">
+                  Einstein's theories of special and general relativity.
+                  Explores spacetime, gravity as curved geometry, and the
+                  relationship between mass and energy.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Mathematics -->
+        <div class="col">
+          <a
+            href="{{ url_for('sub_papers', sub_path='mathematics') }}"
+            class="text-decoration-none text-reset"
+          >
+            <div
+              class="card h-100 zoom-hover w-100 mx-auto"
+              style="max-width: 25rem; height: 500px"
+            >
+              <img
+                src="{{ url_for('static', filename='img/maths.jpg') }}"
+                class="card-img-top"
+                alt="maths"
+                height="300"
+                width="150"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mathematics</h5>
+                <p class="card-text">
+                  Mathematical techniques and proofs essential for physics.
+                  Includes calculus, differential equations, linear algebra, and
+                  complex analysis applications.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {% include 'footer.html' %}
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"
+  ></script>
+</html>
