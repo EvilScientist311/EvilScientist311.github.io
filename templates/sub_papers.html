@@ -12,7 +12,7 @@
     href="{{ url_for('static', filename='favicon.ico') }}"
   />
   <title>Corey's Website</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     .zoom-hover {
       transition: transform 0.2s ease;
@@ -23,6 +23,10 @@
     .card-size {
       height: 80%;
     }
+    .card {
+    max-width: 30rem;
+    width: 100%;
+  }
   </style>
 </head>
 {% include 'header.html' %}
@@ -128,8 +132,7 @@
     <a
       href="{{ url_for('static', filename='papers/qm/Concepts_in_Quantum_Mechanics.pdf') }}"
       target="_blank"
-      class="text-decoration-none text-reset d-block"
-      style="max-width: 30rem"
+      class="col-12 col-md-6 col-lg-4 d-flex justify-content-center text-decoration-none text-reset"
     >
       <div class="card my-3 shadow-sm zoom-hover card-size">
         <div class="card-body">
