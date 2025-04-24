@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
 
     <title>Corey's Website</title>
     <link rel="stylesheet" href="styles.css" />
@@ -14,11 +18,18 @@
       crossorigin="anonymous"
     />
     <style>
+        .zoom-hover {
+          transition: transform 0.2s ease;
+        }
+        .zoom-hover:hover {
+          transform: scale(1.05);
+        }
+        @media (max-width: 576px) {
       .zoom-hover {
-        transition: transform 0.2s ease;
+        transform: scale(1.08);
       }
       .zoom-hover:hover {
-        transform: scale(1.05);
+        transform: scale(1.12);
       }
     </style>
   </head>
